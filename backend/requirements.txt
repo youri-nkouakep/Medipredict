@@ -1,0 +1,15 @@
+fastapi>=0.104
+uvicorn>=0.24
+pydantic[email]>=2.5
+python-dotenv>=1.0
+numpy>=1.24
+pandas>=2.1
+scikit-learn>=1.3
+xgboost>=2.0
+joblib>=1.3
+sqlalchemy>=2.0
+pymysql>=1.1
+cryptography>=41
+passlib[bcrypt]>=1.7
+python-jose[cryptography]>=3.3
+bcrypt==4.0.1  # compatibilité avec passlib

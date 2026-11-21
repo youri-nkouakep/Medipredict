@@ -1,0 +1,23 @@
+# Secrets
+.env
+
+# Python
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Jupyter
+.ipynb_checkpoints/
+
+# Données (non publiées, voir data/README.md)
+data/*.csv
+*.csv
+!results/*.csv
+
+# Modèles intermédiaires générés par les notebooks
+notebooks/*.pkl
+
+# IDE
+.vscode/
+.idea/
