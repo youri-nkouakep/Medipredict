@@ -17,7 +17,7 @@ Le projet va des données à la production :
 
 ![Évaluation d'un patient](docs/screenshots/2_result.png)
 
-Projet d'équipe (5 étudiants), Master IA et Objets Connectés, Université Ibn Tofail, 2026.
+Projet d'équipe (5 étudiants), Master IA et Objets Connectés, Université Ibn Tofail (Maroc), 2026.
 
 ## Mon rôle
 
@@ -26,7 +26,7 @@ J'étais responsable de toute la partie modélisation et de l'application :
 - **choix du modèle final** ;
 - **développement de l'API et de l'interface**.
 
-J'ai ensuite repris seul le projet pour y ajouter les analyses de robustesse, l'explicabilité et le MLOps.
+J'ai ensuite repris le projet pour y ajouter les analyses de robustesse, l'explicabilité et le MLOps.
 
 ---
 
