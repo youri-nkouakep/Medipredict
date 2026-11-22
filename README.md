@@ -151,7 +151,7 @@ cp .env.example .env          # puis renseigner SECRET_KEY et MYSQL_PASSWORD
 docker compose up --build     # application sur http://localhost:8000
 ```
 
-**Sans Docker**, avec une base SQLite (rien à installer côté base de données) :
+**Sans Docker**, avec Python 3.12 ou plus récent et une base SQLite (rien à installer côté base de données) :
 
 ```bash
 pip install -r backend/requirements.txt
