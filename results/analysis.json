@@ -1,0 +1,27 @@
+{
+  "auc_source_only": 0.8287947078581723,
+  "source_identification_accuracy": 0.9988518325828385,
+  "ece": 0.015222951055120264,
+  "shap_importance": {
+    "HbA1c_level": 3.3557000160217285,
+    "age": 0.46779999136924744,
+    "triglycerides": 0.4645000100135803,
+    "sleep_hours": 0.33500000834465027,
+    "crp_level": 0.3330000042915344,
+    "cholesterol": 0.2784999907016754,
+    "high_blood_pressure": 0.2151000052690506,
+    "bmi": 0.15489999949932098,
+    "glucose": 0.11150000244379044,
+    "sugar_consumption": 0.09220000356435776,
+    "smoking_Never": 0.048500001430511475,
+    "smoking_Former": 0.045499999076128006,
+    "physical_activity": 0.03700000047683716,
+    "education_level_Tertiary": 0.027699999511241913,
+    "stress_level": 0.024399999529123306,
+    "education_level_Secondary": 0.017000000923871994,
+    "gender_Male": 0.01640000008046627,
+    "employment_status_Retired": 0.014000000432133675,
+    "employment_status_Unemployed": 0.012400000356137753,
+    "family_history": 0.012400000356137753
+  }
+}
