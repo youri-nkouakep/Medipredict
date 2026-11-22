@@ -159,6 +159,20 @@ cp .env.example .env          # garder DATABASE_URL=sqlite:///./medipredict.db
 cd backend && uvicorn app:app --reload
 ```
 
+**Sous Windows (PowerShell)**, même démarrage sans Docker :
+
+```powershell
+cd $HOME\Documents                # éviter C:\WINDOWS\system32, dossier où PowerShell s'ouvre par défaut
+git clone https://github.com/youri-nkouakep/Medipredict.git
+cd Medipredict
+python -m venv venv
+.\venv\Scripts\Activate.ps1       # si les scripts sont bloqués : Set-ExecutionPolicy RemoteSigned -Scope CurrentUser
+pip install -r backend\requirements.txt
+copy .env.example .env            # puis remplacer SECRET_KEY (commande de génération dans le fichier)
+cd backend
+uvicorn app:app                   # application sur http://127.0.0.1:8000
+```
+
 **Réentraîner et refaire les analyses.** Il faut l'entrepôt `data/data_warehouse.csv` (non publié, voir `data/README.md`) :
 
 ```bash
