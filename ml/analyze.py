@@ -4,7 +4,6 @@ Usage: python -m ml.analyze   (after python -m ml.train)
 """
 import json
 
-import joblib
 import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt  # noqa: E402
@@ -16,6 +15,7 @@ from sklearn.linear_model import LogisticRegression  # noqa: E402
 from sklearn.metrics import roc_auc_score  # noqa: E402
 from xgboost import XGBClassifier  # noqa: E402
 
+from backend.model_io import load_bundle  # noqa: E402
 from ml.data import FEATURES, ROOT, load, split  # noqa: E402
 from ml.metrics import metrics
 from ml.models import XGB_PARAMS, pipeline  # noqa: E402
@@ -95,7 +95,7 @@ def fairness(pred, threshold):
 
 def main():
     FIG.mkdir(parents=True, exist_ok=True)
-    bundle = joblib.load(ROOT / "backend" / "model" / "medipredict.joblib")
+    bundle = load_bundle(ROOT / "backend" / "model" / "medipredict.joblib")
     final, thr = bundle["pipeline"], bundle["threshold"]
     df = load()
     train, test = split(df)

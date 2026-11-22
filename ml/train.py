@@ -6,10 +6,10 @@ import argparse
 import json
 import time
 
-import joblib
 import mlflow
 import pandas as pd
 
+from backend.model_io import booster_path, save_bundle
 from ml.data import FEATURES, ROOT, load, split
 from sklearn.model_selection import StratifiedKFold, cross_val_predict
 
@@ -53,11 +53,12 @@ def main():
             rows.append({"model": name, **m})
             print(name, {k: round(v, 4) for k, v in m.items()}, flush=True)
             if name == FINAL:
-                joblib.dump({"pipeline": pipe, "threshold": thr, "features": FEATURES}, MODEL_PATH, compress=3)
+                save_bundle(pipe, thr, FEATURES, MODEL_PATH)
                 pd.DataFrame({"y": test["target"].to_numpy(), "p": p, "source": test["source_dataset"].to_numpy(),
                               "gender": test["gender"].to_numpy(), "age": test["age"].to_numpy()}) \
                     .to_csv(RESULTS / "test_predictions.csv.gz", index=False)
                 mlflow.log_artifact(str(MODEL_PATH))
+                mlflow.log_artifact(str(booster_path(MODEL_PATH)))
 
     path = RESULTS / "model_comparison.csv"
     old = pd.read_csv(path) if path.exists() and args.only else pd.DataFrame()

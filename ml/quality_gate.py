@@ -4,17 +4,17 @@ Exits with an error if the AUC drops below the reference, so a worse model canno
 """
 import sys
 
-import joblib
 import pandas as pd
 from sklearn.metrics import roc_auc_score
 
+from backend.model_io import load_bundle
 from ml.data import ROOT
 
 MIN_AUC = 0.93
 
 
 def main():
-    bundle = joblib.load(ROOT / "backend" / "model" / "medipredict.joblib")
+    bundle = load_bundle(ROOT / "backend" / "model" / "medipredict.joblib")
     holdout = pd.read_csv(ROOT / "data" / "holdout_sample.csv")
     auc = roc_auc_score(holdout["target"], bundle["pipeline"].predict_proba(holdout[bundle["features"]])[:, 1])
     print(f"AUC on {len(holdout)} holdout patients: {auc:.4f} (minimum {MIN_AUC})")

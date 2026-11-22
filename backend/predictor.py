@@ -1,10 +1,10 @@
 """Loads the exported pipeline and returns a probability, a decision and the factors behind it."""
-import joblib
 import numpy as np
 import pandas as pd
 import shap
 
 from config import MODEL_PATH
+from model_io import load_bundle
 
 LABELS = {
     "age": "Âge", "bmi": "IMC", "HbA1c_level": "HbA1c", "glucose": "Glycémie", "cholesterol": "Cholestérol",
@@ -19,7 +19,7 @@ LABELS = {
 
 class Predictor:
     def __init__(self, path=MODEL_PATH):
-        bundle = joblib.load(path)
+        bundle = load_bundle(path)
         self.pipeline, self.threshold, self.features = bundle["pipeline"], bundle["threshold"], bundle["features"]
         self.explainer = shap.TreeExplainer(self.pipeline.named_steps["model"])
 
