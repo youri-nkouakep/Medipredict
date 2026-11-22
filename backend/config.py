@@ -19,8 +19,7 @@ SECRET_KEY = _obligatoire("SECRET_KEY")
 DATABASE_URL = _obligatoire("DATABASE_URL")
 ACCESS_TOKEN_EXPIRE_MINUTES = int(os.getenv("ACCESS_TOKEN_EXPIRE_MINUTES", "60"))
 
-MODEL_PATH = BASE_DIR / "model" / "xgboost.pkl"
-SCALER_PATH = BASE_DIR / "model" / "scaler.pkl"
-# Seuil de décision de XGBoost (indice de Youden, calculé sur le jeu d'entraînement,
-# notebook 02). C'est avec ce seuil que sont obtenues les métriques du README.
-DECISION_THRESHOLD = float(os.getenv("DECISION_THRESHOLD", "0.689"))
+# Pipeline exported by ml/train.py: preprocessing + XGBoost + decision threshold
+# (Youden index on out-of-fold training predictions).
+MODEL_PATH = Path(os.getenv("MODEL_PATH", BASE_DIR / "model" / "medipredict.joblib"))
+RESULTS_DIR = BASE_DIR.parent / "results"

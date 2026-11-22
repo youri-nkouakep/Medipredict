@@ -45,8 +45,9 @@ class Prediction(Base):
     probability_normal = Column(Float)
     probability_abnormal = Column(Float)
 
-    # Patient snapshot (stored as JSON string for portability)
+    # Patient snapshot (JSON) and explanation, also used for drift monitoring
     patient_data = Column(Text, nullable=True)
+    factors      = Column(Text, nullable=True)
 
     created_at = Column(
         DateTime(timezone=True),
