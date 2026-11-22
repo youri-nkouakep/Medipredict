@@ -1,2 +1,3 @@
 *.joblib binary
 backend/model/*.json -text
+*.ipynb linguist-detectable=false
