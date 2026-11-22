@@ -1,0 +1,27 @@
+{
+  "model": "XGBoost",
+  "features": [
+    "age",
+    "bmi",
+    "HbA1c_level",
+    "glucose",
+    "cholesterol",
+    "sleep_hours",
+    "triglycerides",
+    "physical_activity",
+    "family_history",
+    "stress_level",
+    "high_blood_pressure",
+    "sugar_consumption",
+    "crp_level",
+    "gender_Male",
+    "smoking_Former",
+    "smoking_Never",
+    "education_level_Secondary",
+    "education_level_Tertiary",
+    "employment_status_Retired",
+    "employment_status_Unemployed"
+  ],
+  "train_rows": 222960,
+  "test_rows": 55741
+}

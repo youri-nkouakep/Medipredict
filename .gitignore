@@ -6,17 +6,19 @@ venv/
 .venv/
 __pycache__/
 *.pyc
-
-# Jupyter
+.pytest_cache/
 .ipynb_checkpoints/
 
-# Données (non publiées, voir data/README.md)
-data/*.csv
-*.csv
-!results/*.csv
-
-# Modèles intermédiaires générés par les notebooks
+# Data: the full warehouse is not published (see data/README.md)
+data/data_warehouse.csv
+results/test_predictions.csv.gz
 notebooks/*.pkl
+notebooks/*.csv
+
+# Local databases and experiment tracking
+*.db
+mlruns/
+mlartifacts/
 
 # IDE
 .vscode/
