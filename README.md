@@ -2,6 +2,8 @@
 
 [![CI](https://github.com/youri-nkouakep/Medipredict/actions/workflows/ci.yml/badge.svg)](https://github.com/youri-nkouakep/Medipredict/actions/workflows/ci.yml)
 
+> **Contexte :** projet scolaire réalisé en 2025 dans le cadre du Master IA et Objets Connectés de l'Université Ibn Tofail. Je l'ai repris et adapté en 2026 avant de le publier ici.
+
 Aide au dépistage du **diabète**, de l'**hypertension** et des **maladies cardiaques** à partir de 20 indicateurs cliniques et de mode de vie.
 
 Le projet va des données à la production :
