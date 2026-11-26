@@ -19,7 +19,7 @@ Le projet va des données à la production :
 
 ![Évaluation d'un patient](docs/screenshots/2_result.png)
 
-Projet d'équipe (5 étudiants), Master IA et Objets Connectés, Université Ibn Tofail (Maroc), 2026.
+Projet d'équipe (5 étudiants), Master IA et Objets Connectés, Université Ibn Tofail (Maroc), 2025.
 
 ## Mon rôle
 
